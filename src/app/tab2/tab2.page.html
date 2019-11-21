@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Generate QR
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button *ngIf="btnActive" (click)="generateQR()" >Generate QR code</ion-button>
+
+
+  <ion-card *ngIf="!btnActive" class="card">
+    <ngx-qrcode  [qrc-value] = "value" qrc-element-type="elementType">
+    </ngx-qrcode>
+  <ion-card-content>Code : {{value}}</ion-card-content>
+
+  </ion-card>
+
+
+  <ion-button (click)="navigate()">Go to chat</ion-button>
+
+
+  <div id="para"></div>
+
+    <div>
+      <ion-button (click)="startD()">Start Listening</ion-button>
+    </div>
+    <div>
+
+      <p>
+        {{text}}
+
+      </p>
+    </div>
+
+
+    <div #mapElement class="map"> 
+
+    </div>
+
+</ion-content>

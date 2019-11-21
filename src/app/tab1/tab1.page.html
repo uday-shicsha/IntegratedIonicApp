@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+     Location
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div>
+      <ion-button  (click)="getGeolocation()">Test Location</ion-button>
+      <p class="cool" *ngIf="userMessage">{{userMessage}}</p>
+      <p class="red" *ngIf="userMessagebad">{{userMessagebad}}</p>
+      <p *ngIf="latitude">This is the Latitude {{latitude}}</p>
+      <p *ngIf="latitude">This is the Longitude {{longitude}}</p>
+    </div>
+
+<div id="para"></div>
+
+    <div>
+      <ion-button (click)="start()">Start Listening</ion-button>
+    </div>
+    <div>
+    </div>
+
+</ion-content>

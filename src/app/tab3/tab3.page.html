@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Scan QR
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="scanQR()">Scan QR</ion-button>
+
+  <ion-card *ngIf="scannedCode" >
+
+    <ion-card-content>Scanned Code : {{scannedCode }}</ion-card-content>
+  </ion-card>
+  
+  <div style="margin-top: 2rem;">
+    <p class="cool" *ngIf="userMessage">{{userMessage}}</p>
+    <p class="red" *ngIf="userMessagebad">{{userMessagebad}}</p>
+  
+  </div>
+  
+  
+  <div>
+
+      <ion-item>
+      <ion-label>Code</ion-label>
+    <ion-input type="text" placeholder="Code" [(ngModel)]="codeInput" (keyup)="checkCodeInput()" maxlength="8"></ion-input>
+      </ion-item>
+    <ion-button *ngIf="btnActive" (click)="sendQR()">Submit Code</ion-button>
+  </div>
+
+</ion-content>
+
+
+
+
